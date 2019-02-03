@@ -38,6 +38,7 @@ class MyHomePageState extends State<MyHomePage> {
         child: ListView(
           children: <Widget>[
             DateTimePickerFormField(
+              lastDate: DateTime.now(),
               initialDate: DateTime.now(),
               inputType: inputType,
               format: formats[inputType],
