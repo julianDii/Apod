@@ -4,6 +4,7 @@ import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:space/Apod.dart';
 import 'package:space/api/api.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:optional/optional.dart';
 
 const appName = 'Apod - Astronomy Picture of the Day';
 
@@ -39,7 +40,7 @@ class MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             DateTimePickerFormField(
               lastDate: DateTime.now(),
-              initialDate: DateTime.now(),
+              initialDate: DateTime.now().subtract(new Duration(minutes: 1)),
               inputType: inputType,
               format: formats[inputType],
               editable: editable,
@@ -62,7 +63,7 @@ class MyHomePageState extends State<MyHomePage> {
                         //displays the title
                         Padding(padding: EdgeInsets.all(10.0)),
                         CachedNetworkImage(
-                          imageUrl: snapshot.data.hdurl,
+                          imageUrl: snapshot.data?.hdurl ?? "",
                           placeholder: CircularProgressIndicator(),
                           fadeOutDuration: new Duration(seconds: 1),
                           fadeInDuration: new Duration(seconds: 3),

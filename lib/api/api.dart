@@ -2,15 +2,15 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:space/Apod.dart';
+import 'package:space/constants.dart';
 
 const baseUrl = "https://api.nasa.gov/planetary/apod?";
-const api_key = "soGAktRK7d7ErYh3d9JNWiNKXOkfC3CHg6lMzr0u";
+
 
 Future<Apod> getApod(String date) async {
   String sanitizedDate = sanitizeDateString(date);
   String url =
       baseUrl + "api_key=" + api_key + "&date=" + sanitizedDate + "&hd=True";
-  print(url);
 
   final response = await http.get(url, headers: {"Accept": "applicarion/json"});
 

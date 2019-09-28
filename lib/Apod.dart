@@ -33,23 +33,27 @@ class Apod {
     this.url,
   });
 
-  factory Apod.fromJson(Map<String, dynamic> json) => new Apod(
-    date: json["date"],
-    explanation: json["explanation"],
-    hdurl: json["hdurl"],
-    mediaType: json["media_type"],
-    serviceVersion: json["service_version"],
-    title: json["title"],
-    url: json["url"],
-  );
+  factory Apod.fromJson(Map<String, dynamic> json) =>
+      new Apod(
+        date: json["date"] == null ? null : json["date"],
+        explanation: json["explanation"] == null ? null : json["explanation"],
+        hdurl: json["hdurl"] == null ? null : json["hdurl"],
+        mediaType: json["media_type"] == null ? null : json["media_type"],
+        serviceVersion: json["service_version"] == null
+            ? null
+            : json["service_version"],
+        title: json["title"] == null ? null : json["title"],
+        url: json["url"] == null ? null : json["url"],
+      );
 
-  Map<String, dynamic> toJson() => {
-    "date": date,
-    "explanation": explanation,
-    "hdurl": hdurl,
-    "media_type": mediaType,
-    "service_version": serviceVersion,
-    "title": title,
-    "url": url,
-  };
+  Map<String, dynamic> toJson() =>
+      {
+        "date": date == null ? null : date,
+        "explanation": explanation == null ? null : explanation,
+        "hdurl": hdurl == null ? null : hdurl,
+        "media_type": mediaType == null ? null : mediaType,
+        "service_version": serviceVersion == null ? null : serviceVersion,
+        "title": title == null ? null : title,
+        "url": url == null ? null : url,
+      };
 }

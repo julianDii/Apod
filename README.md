@@ -2,12 +2,22 @@
 
 An app aggregating beautiful astronomic content. 
 
-##
 
-Features:
+## Features:
 
 - Fetches the Astronomy picture of the day from 
 https://api.nasa.gov/planetary/apod?api_key=XXX=2019-01-06&hd=True for a selectable date and shows the picture and data.
+
+## How it looks like
+
+!["Apod"](./preview.png)
+
+
+## dependencies
+
+You need an api for the NASA open apis you can issue it here: [API KEY](https://api.nasa.gov/)
+
+place the key in a file called `constants.dart` under `/Apod/lib/constants.dart`.
 
 ## Getting Started
 
